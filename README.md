@@ -1,8 +1,44 @@
+<div align="center">
+
 # CelloCut
 
-Official implementation of **CelloCut: Constructive Watertight Remeshing via Tetrahedral Cell Cuts**.
+**Constructive Watertight Remeshing via Tetrahedral Cell Cuts**
 
-CelloCut converts defective meshes with holes, self-intersections, non-manifold elements, or ambiguous thin structures into compact watertight solids. It formulates watertight conversion as a volumetric partitioning problem over a tetrahedral cell complex and solves the resulting labeling problem with graph-cut optimization.
+[![Project Page](https://img.shields.io/badge/Project-Page-2f6f73?style=for-the-badge)](https://rangeryx-66.github.io/cellocut/)
+[![Paper](https://img.shields.io/badge/Paper-arXiv_soon-b31b1b?style=for-the-badge)](#citation)
+[![Benchmark](https://img.shields.io/badge/Benchmark-HuggingFace-ffcc4d?style=for-the-badge)](https://huggingface.co/datasets/rangeryx2005/CelloCut_Benchmark)
+[![License](https://img.shields.io/badge/License-Apache_2.0-4b5563?style=for-the-badge)](LICENSE)
+
+Official implementation of **CelloCut**, a constructive framework for turning defective meshes into compact, strictly watertight solids.
+
+<img src="assets/readme/teaser.png" width="100%" alt="CelloCut teaser">
+
+</div>
+
+## TL;DR
+
+CelloCut treats watertight remeshing as a **volumetric partitioning** problem instead of local surface repair. It embeds an imperfect input mesh into a tetrahedral cell complex, solves a graph-cut labeling problem with fill-aware penalties, and extracts a watertight surface by construction.
+
+## Highlights
+
+- **Strictly watertight outputs** for meshes with holes, self-intersections, non-manifold elements, and thin ambiguous structures.
+- **Constructive volumetric formulation** over tetrahedral cells, with a globally consistent inside-outside interpretation.
+- **Paper-aligned defaults**: `512^3` UDF grid, `epsilon=1/512`, `decimate_ratio=0.95`, and `lambda_fill=20`.
+- **Single-model and batch inference** through compact Python entry points.
+
+## Method
+
+<p align="center">
+  <img src="assets/readme/pipeline.png" width="95%" alt="CelloCut pipeline">
+</p>
+
+CelloCut first constructs a thickened proxy surface from the input mesh, tetrahedralizes the proxy domain, optimizes a binary interior-exterior labeling with graph cut, and finally extracts the induced watertight boundary.
+
+## Results
+
+<p align="center">
+  <img src="assets/readme/results.jpg" width="72%" alt="CelloCut qualitative results">
+</p>
 
 ## Installation
 
@@ -48,8 +84,6 @@ python example_batch.py --input_dir path/to/input_objs --output_dir path/to/resu
 | `--voxel_res` | `512` | UDF grid resolution. The paper uses a `512^3` grid. |
 | `--decimate_ratio` | `0.95` | Fraction of proxy mesh faces removed before tetrahedralization. |
 | `--lamda_fill`, `--lambda_fill` | `20` | Filling regularization weight, denoted as `lambda_fill` in the paper. |
-
-The default parameters match the paper: `voxel_res=512`, thickening offset `epsilon=1/512`, `decimate_ratio=0.95`, and `lambda_fill=20`.
 
 ## Benchmark
 
