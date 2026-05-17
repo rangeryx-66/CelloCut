@@ -12,6 +12,21 @@
   <img src="assets/readme/teaser.png" width="100%" alt="CelloCut teaser">
 </p>
 
+<p align="center">
+  Xuan Yang<sup>1,*</sup>, Yuhang Zeng<sup>1,*</sup>, Dinglong Fang<sup>1,*</sup>,
+  Guochuan Tang<sup>1</sup>, Jiaju Jiang<sup>2</sup>, Ben Li<sup>2</sup>,
+  Wei Zhou<sup>2</sup>, Xiao-Xiao Long<sup>1,&dagger;</sup>,
+  Cheng Lin<sup>3,&dagger;</sup>
+</p>
+
+<p align="center">
+  <sup>1</sup>Nanjing University &nbsp; · &nbsp;
+  <sup>2</sup>China Mobile Zijin (Jiangsu) Innovation Research Institute Co., Ltd. &nbsp; · &nbsp;
+  <sup>3</sup>Macau University of Science and Technology<br>
+  <sup>*</sup>Equal contribution &nbsp; · &nbsp;
+  <sup>&dagger;</sup>Corresponding authors
+</p>
+
 Official implementation of **CelloCut**, a constructive framework for turning defective meshes into compact, strictly watertight solids.
 
 ## TL;DR
@@ -105,7 +120,7 @@ The CelloCut benchmark is available on Hugging Face:
 ```bibtex
 @article{yang2026cellocut,
   title   = {CelloCut: Constructive Watertight Remeshing via Tetrahedral Cell Cuts},
-  author  = {Yang, Xuan and Zeng, Yuhang and Fang, Dinglong and Tang, Guochuan and Long, Xiao-Xiao and Lin, Cheng},
+  author  = {Yang, Xuan and Zeng, Yuhang and Fang, Dinglong and Tang, Guochuan and Jiang, Jiaju and Li, Ben and Zhou, Wei and Long, Xiao-Xiao and Lin, Cheng},
   journal = {arXiv preprint},
   year    = {2026}
 }
