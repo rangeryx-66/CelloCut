@@ -27,11 +27,21 @@ CelloCut treats watertight remeshing as a **volumetric partitioning** problem in
 
 ## Method
 
+We introduce CelloCut, a constructive watertight remeshing framework for defective meshes whose surfaces no longer define a reliable solid. Instead of repairing holes, self-intersections, non-manifold configurations, and single-layer regions with local surface operations, CelloCut formulates the task as a volumetric partitioning problem: each tetrahedral cell in space is assigned an interior or exterior label, and the final mesh is extracted as the boundary induced by this optimized partition.
+
+CelloCut first constructs a conservative thickened proxy from the input mesh using an unsigned distance field and a small offset thickness. This proxy provides stable volumetric evidence even when the original surface is open, intersecting, or locally ambiguous. We then tetrahedralize the proxy domain and initialize cell labels from the thickened geometry. A graph-cut optimization resolves uncertain regions under one-sided constraints that preserve proxy-supported interiors and fill-aware interface penalties that discourage unsupported newly introduced boundaries. The resulting partition gives a globally consistent inside-outside interpretation, and the final surface is watertight by construction.
+
 <p align="center">
   <img src="assets/readme/pipeline.png" width="95%" alt="CelloCut pipeline">
 </p>
 
-CelloCut first constructs a thickened proxy surface from the input mesh, tetrahedralizes the proxy domain, optimizes a binary interior-exterior labeling with graph cut, and finally extracts the induced watertight boundary.
+### Problem Setting
+
+Open holes, single-layer sheets, self-intersections, and mixed corruptions make local surface repair unreliable because the input no longer determines a unique interior volume. In these cases, exact surface restoration is often underconstrained; the practical goal is to choose a conservative solid interpretation that is compact, manifold, and volumetrically consistent.
+
+<p align="center">
+  <img src="assets/readme/method.png" width="88%" alt="Ambiguous defect patterns handled by CelloCut">
+</p>
 
 ## Results
 
