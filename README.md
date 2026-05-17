@@ -1,19 +1,18 @@
-<div align="center">
+<h1 align="center">CelloCut:<br>Constructive Watertight Remeshing via Tetrahedral Cell Cuts</h1>
 
-# CelloCut
+<p align="center">
+  <a href="#citation"><img src="https://img.shields.io/badge/arXiv-Paper-red?logo=arxiv&logoColor=white" alt="arXiv"></a>
+  <a href="https://rangeryx-66.github.io/cellocut/"><img src="https://img.shields.io/badge/Project_Page-Website-green?logo=googlechrome&logoColor=white" alt="Project Page"></a>
+  <a href="https://huggingface.co/datasets/rangeryx2005/CelloCut_Benchmark"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Benchmark-blue" alt="Benchmark"></a>
+  <a href="https://github.com/rangeryx-66/CelloCut"><img src="https://img.shields.io/badge/GitHub-Code-black?logo=github&logoColor=white" alt="Code"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-lightgrey" alt="License"></a>
+</p>
 
-**Constructive Watertight Remeshing via Tetrahedral Cell Cuts**
-
-[![Project Page](https://img.shields.io/badge/Project-Page-2f6f73?style=for-the-badge)](https://rangeryx-66.github.io/cellocut/)
-[![Paper](https://img.shields.io/badge/Paper-arXiv_soon-b31b1b?style=for-the-badge)](#citation)
-[![Benchmark](https://img.shields.io/badge/Benchmark-HuggingFace-ffcc4d?style=for-the-badge)](https://huggingface.co/datasets/rangeryx2005/CelloCut_Benchmark)
-[![License](https://img.shields.io/badge/License-Apache_2.0-4b5563?style=for-the-badge)](LICENSE)
+<p align="center">
+  <img src="assets/readme/teaser.png" width="100%" alt="CelloCut teaser">
+</p>
 
 Official implementation of **CelloCut**, a constructive framework for turning defective meshes into compact, strictly watertight solids.
-
-<img src="assets/readme/teaser.png" width="100%" alt="CelloCut teaser">
-
-</div>
 
 ## TL;DR
 
