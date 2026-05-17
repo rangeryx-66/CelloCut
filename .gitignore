@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Native build artifacts
+build/
+*.so
+*.o
+*.a
+*.dylib
+*.dll
+*.egg
+
+# Local environments
+.env
+.venv/
+venv/
+env/
+
+# Outputs and scratch data
+results/
+dataset/ours/
+*.log
+
+# System files
+.DS_Store
