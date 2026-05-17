@@ -115,7 +115,8 @@ h2 {
 }
 
 .authors,
-.affiliations {
+.affiliations,
+.author-notes {
   max-width: 980px;
   color: var(--muted);
   font-size: clamp(15px, 1.7vw, 20px);
@@ -126,13 +127,19 @@ h2 {
 }
 
 .authors sup,
-.affiliations sup {
+.affiliations sup,
+.author-notes sup {
   font-size: 0.68em;
   line-height: 0;
 }
 
 .affiliations {
+  margin-bottom: 8px;
+}
+
+.author-notes {
   margin-bottom: 30px;
+  font-size: 15px;
 }
 
 .actions {
